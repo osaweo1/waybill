@@ -10,14 +10,18 @@ console.log({Waybill} )
 console.log({User})
 
 exports.homepage= async(req,res)=>{
-
+    const infoErrorsObj=req.flash('infoErrors')
+    const infoSubmitObj=req.flash('infoSubmit')
+    
     try{
         content={
-            title:'Waybill Home'
+            title:'Waybill Home',
+            infoErrorsObj:infoErrorsObj,
+            infoSubmitObj:infoSubmitObj,
         }
         
         res.render('index',content)
-        res.sendStatus(200)
+        
     }
     catch(error){
         console.log(error)
@@ -290,15 +294,15 @@ exports.loginSub=async(req,res)=>{
                         res.redirect("/Admin")
                     }
                 }else{
-                    console.log("wrong password")
+                    req.flash("infoErrors","Invalid Login Credencials")
                     res.redirect("/")
                 }
             }else{
-                console.log("invalid ")
+                req.flash("infoErrors","Invalid Login Credencials")
                 res.redirect('/')
             }
         }else{
-            console.log("invalid Credencials")
+            req.flash("infoErrors","Invalid Login Credencials")
             res.redirect('/')
         }
     } 

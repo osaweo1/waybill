@@ -31,7 +31,12 @@
     
 <%-body-%>
 <section class="footer">
-    Faraday
+    <p id="copy">&copy Faraday Tech Service</p>
+    <script>
+        const d=new Date()
+        document.getElementById('copy').innerHTML=`${d.getFullYear()} &copy Faraday Tech Service`
+    </script>
+    
 </section>
 <script src="../js/script.js"></script>
 </body>
