@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>waybill System</title>
+</head>
+<body id="body">
+    <section class="header des-sec">
+        <div class="logo">
+            <h1>GramenPetroserve</h1>
+            <p>E-WayBill System</p>
+        </div>
+        <div class="nav">
+            <ul>
+               <%if(user){%>
+                    <li><p>User: <%=user.username%></p></li>
+                    <li><p>Role: <%=user.role%></p></li>
+                    <li><p>Email: <%=user.email%></p></li>
+                    <li><p>Name: <%=user.fullname %></p></li>
+                    <li><a href="/logout">Logout</a></li>
+            
+                <%}%>
+            </ul>
+            
+            
+        </div>
+    </section>
+    
+<%-body-%>
+<section class="footer">
+    Faraday
+</section>
+<script src="../js/script.js"></script>
+</body>
+</html>

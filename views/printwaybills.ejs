@@ -1,0 +1,139 @@
+
+<section class="waybilldetails">
+    <h1>WayBill Details</h1>
+    <div class="detailbody">
+        <div class="logo">
+            <h1>GramenPetroserve</h1>
+            <p>WayBill System</p>
+        </div>
+        <% if(detail!=""){%>
+            <div class="des">
+                <div class="div1">
+                <h3>From:<span><%= detail.from %></span></h3>
+                <h3>To:<span><%= detail.to %></span></h3>
+            </div>  
+            <div class="div2">
+                <h3>WayBill Number: <span><%=detail.waybill_id %></span></h3>
+                <h3>Date:<span><%=detail.date_Created.toLocaleDateString('el-GR') %></span></h3>
+            </div>
+            </div>
+            <div class="driverdetail">
+                <h3>Driver's Name:<span><%= detail.t_name %></span> </h3>
+                <h3>Type: <span><%= detail.t_type %></span></h3>
+                <h3>Registration: <span><%= detail.t_registration %></span></h3>
+            </div>
+            <div class="note">
+            <% if(detail.note!=""){%>
+                <h3>Note</h3>
+                <p><%= detail.note %></p>
+            <%}%>
+            </div>
+            <div class="items-detail">
+                <table>
+
+                    <tr>
+                        <th>S/N</th>
+                        <th>Item Name</th>
+                        <th>Item Description</th>
+                        <th>Quantity</th>
+                        <th>Unit</th>
+                    </tr>
+                    <% if(detail.items!=""){%>
+                    <% detail.items.forEach((item)=>{%>
+                        <tr>
+                            <td>
+                                <%item.serial_number.forEach((sn)=>{%>
+                                    
+                                    <li><%=sn%></li>
+
+                                <%})%>
+                            </td>
+                            <td>
+                                <%item.item_name.forEach((itn)=>{%>
+                                    
+                                    <li><%=itn%></li>
+                                
+                                    
+                                <%})%>
+                            </td>
+                            <td>
+                                <%item.item_description.forEach((itd)=>{%>
+                                    
+                                    <li><%=itd%></li>
+                                
+                                    
+                                <%})%>
+                            </td>
+                            <td>
+                                <%item.item_quantity.forEach((itq)=>{%>
+                                    
+                                    <li><%=itq%></li>
+                                
+                                    
+                                <%})%>
+                            </td>
+                            <td>
+                                <%item.item_unit.forEach((itu)=>{%>
+                                    
+                                    <li><%=itu%></li>
+                                
+                                    
+                                <%})%>
+                            </td>
+                           
+                        </tr>
+                    <%})%>
+                    <%}%>
+                    
+                    
+                </table>
+            </div>
+            <div class="approverDetails ">
+                
+
+                <%if(detail.user!=""){%>
+                    <% detail.user.forEach((user)=>{%>
+                        <h3>Prepared By: <span><%=user.fullname%></span></h3>
+                        <h3>Email: <span><%=user.email%></span></h3>
+                        <!-- <h3>Role: <span><%=user.role%></span></h3> -->
+                    <%})%>
+                <%}%>
+            </div>
+            <div class="approverDetails ">
+                <h3>Authorization </h3>
+                <div class="auth">
+                    
+                    
+                    <% if(detail.approved_details!=""){%>
+                        <%detail.approved_details.forEach((person)=>{%>
+                            <div>
+                                <% person.user.forEach((user)=>{%>
+                                <p>Approved By: <span><%=user.fullname%></span></p>
+                                <p>Email: <span><%=user.email%></span></p>
+                                    
+                                <%})%>
+                            </div>
+                            <div>      
+                                <p> Comment: <span><%=person.approvers_comment%></span></p>
+                                <p> Approved: <span>Yes</span></p>
+                                <p> Approved Date: <span><%=person.approved_date.toLocaleDateString('el-GR')%></span></p>
+                            </div> 
+                            
+                        <%})%>
+                    <%}%>
+                    
+                </div>
+            </div>
+        <%}%>
+    </div>
+    
+    <div class="button-section">
+        <a href="/menu">Menu</a>
+        <button class="print-waybill">Print</button>
+    </div>
+</section>
+
+<script src="../js/script.js"">
+    
+</script>
+

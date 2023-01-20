@@ -1,0 +1,54 @@
+<section class="to_approve des-sec">
+    <%if(infoSubmitObj!=""){%>
+        <div class="alert">
+            <p><%= infoSubmitObj%></p>
+        </div>
+    <%}%>
+    <%if(infoErrorsObj!=""){%>
+        <div class="alert1">
+            <p><%= infoErrorsObj%></p>
+        </div>
+    <%}%>
+
+<div class="view-waybill">
+    <h1> Waybill To Appove</h1>
+    <div class="approvewaybill">
+        <table>
+            
+            <%if(results!=""){%>
+                <tr>
+                    <th>WayBill Number</th>
+                    
+                    <th>Date Of Generation</th>
+                   </tr>
+                <% results.forEach((result)=>{%>
+                    <tr>
+                        <td><a href="/wayBillDetail/<%=result._id%>"><%=result.waybill_id%></a></td> 
+                       <td><%=result.date_Created.toLocaleDateString('el-GR')%></td> 
+                    </tr>
+                   
+               <%})%>
+            
+            
+            <%}else{%>
+                <tr>
+                <td><p> There Are No Waybills To Approve</p></td>
+                </tr>
+            <%}%>              
+            
+            
+             
+         </table>
+         <%counts.forEach((count)=>{%>
+            <h3>Number of Waybills To Approve:<%=count.count%></h3>
+        <%})%>
+    </div>
+
+    <div class="cancelapprove">
+        <a href="/logout" id="gohome">Logout</a>
+    </div>
+
+  
+</div>
+
+</section>

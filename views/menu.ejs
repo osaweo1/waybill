@@ -1,0 +1,133 @@
+
+
+
+  
+    <section class="menu-body ">
+      
+    
+        <div class="menu-area">
+            <ul>
+                <li><button class="generate">View WayBills</button></li>
+                
+            </ul>
+            <h2 id="date"></h2>
+            <p id="time"></p>
+        </div>
+        <div class="menu-display">
+           
+            <div class="generate-waybill">
+                <h3>Fill To Generate WayBill</h3>
+                
+                
+                <form action="#" method="POST">
+                    <input type="" id="waybillNumber" name="waybillNumber"></h5>
+                    <div class="top-section">
+                        <label for="from">From:</label>
+                        <input type="text" required="true" name="from_destination">
+                        <label for="to">To:</label>
+                        <input type="text" required="true" name="destination">
+                    </div>
+                    <div class="trans">
+                        <div class="mot">
+                            <h6>Mean Of Transportation</h6>
+                            
+                            <input type="radio" name="mot" id="land" value="Land">
+                            <label for="land">Land</label><br>
+                            
+                            <input type="radio" name="mot" id="water" value="Water">
+                            <label for="Water">Water</label>
+                            
+                        </div>
+                        <div class="transporttype">
+                            <label for="divers-name" id="d-name">Driver's Name:</label>
+                            <input type="text" name="drivers_name">
+                            <label for="Vehicle-type" id="v-type">Vehicle-type:</label>
+                            <input type="text" name="vehicle_type">
+                            <label for="vehicle-number">Registration:</label>
+                            <input type="text" name="vehicle_number" maxlength="9">
+                        </div>
+                    </div>
+                    <div class="reason">
+                        <label for="note">Note:</label>
+                        <textarea placeholder="More Info..." name="note"></textarea>
+                    </div>
+                    <div class="input-content">
+                        <table>
+                            <tr>
+                                <th>S/N</th>
+                                <th>Item Name</th>
+                                <th>Item Description</th>
+                                <th>Quantity</th>
+                                <th>Unit</th>
+
+                            </tr>
+                            <tr>
+                                <td><input type="number" min="1" name="serialnumber"  ></td>
+                                <td><input type="text" name="iname"></td>
+                                <td><textarea name="idescription" ></textarea></td>
+                                <td><input type="number" min="1" name="quantity"></td>
+                                <td><input type="text" name="unit" id="unit"></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="add">
+                        <button id="add" >+</button>
+                    </div>
+                    
+                    <input type="hidden" name="fullname" value="<%=user.fullname%>">
+                    
+                    <div class="submitapprove">
+                        <button type="submit">Send For Appoval</button>
+                        <button id="cancel">Cancel</button>
+                    </div>
+                </form>
+            </div>
+            <div class="reprint-waybill">
+                hello
+            </div>
+             <div class="edit-waybill">
+               edit
+                
+            </div> 
+            <div class="view-waybill">
+                <h1>Approved Waybill</h1>
+                <div class="approvewaybill">
+                    <table>
+                        <tr>
+                         <th>WayBill Number</th>
+                         
+                         <th>Date Of Generation</th>
+                        </tr>
+                        <%if(results!=""){%>
+                            <% results.reverse().forEach((result)=>{%>
+                                <tr>
+                                    <td><a href="/wayBillDetails/<%=result._id%>"><%=result.waybill_id%></a></td> 
+                                    
+
+                                   <td><%=result.date_Created.toLocaleString()%></td> 
+                                </tr>
+                           <%})%>
+                        
+                        
+                        <%}%>              
+                        
+                        
+                         
+                     </table>
+                     <% counts.forEach((count)=>{%>
+                        <h3>Number of Approved Waybills:<%=count%></h3>
+                    <%})%>
+                </div>
+
+                <div class="cancelapprove">
+                    <button id="approvecancel">Cancel</button>
+                </div>
+
+              
+            </div>
+        </div>
+    </section>
+   
+    
+   
+

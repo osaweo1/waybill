@@ -1,0 +1,42 @@
+<section class="to_approve">
+    <%if(infoSubmitObj!=""){%>
+        <div class="alert">
+            <p><%= infoSubmitObj%></p>
+        </div>
+    <%}%>
+    <%if(infoErrorsObj!=""){%>
+        <div class="alert1">
+            <p><%= infoErrorsObj%></p>
+        </div>
+    <%}%>
+
+    <div class="createUser">
+        <form action="register" method="POST">
+            <label for="f_name" > Full Name</label>
+            <input type="text" name="f_name" id="f_name">
+            <label for="username">UserName</label>
+            <input type="text" name="username" id="username">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            <label for="role">Role</label>
+            <select name="role" id=" check" >
+                <option value="select">Select</option>
+                <option value="Admin">Admin</option>
+                <option value="Approver">Approver</option>
+                <option value="User">User</option>
+
+            </select>
+            <label for="password">Password</label>
+            <input type="password" name="password">
+            <label for="password1">Comfirm_Password</label>
+            <input type="password" name="password1">
+
+            <button type="submit" >Create User</button>
+
+
+        </form>
+    </div>
+
+
+    khrgjerhgklej
+</section>
