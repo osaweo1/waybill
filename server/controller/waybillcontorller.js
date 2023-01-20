@@ -15,8 +15,9 @@ exports.homepage= async(req,res)=>{
         content={
             title:'Waybill Home'
         }
-
+        
         res.render('index',content)
+        res.sendStatus(200)
     }
     catch(error){
         console.log(error)
