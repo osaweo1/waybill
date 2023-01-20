@@ -1,18 +1,19 @@
 <section class="content">
+    <%if(infoSubmitObj!=""){%>
+        <div class="alert">
+            <p><%= infoSubmitObj%></p>
+        </div>
+    <%}%>
+    <%if(infoErrorsObj!=""){%>
+        <div class="alert1">
+            <p><%= infoErrorsObj%></p>
+        </div>
+    <%}%>
    <div class="first-dis">
     <h3>Gramen E-waybill System</h3>
     <button id="open">Click to Login To WayBill System</button>
    </div>
-   <%if(infoSubmitObj!=""){%>
-    <div class="alert">
-        <p><%= infoSubmitObj%></p>
-    </div>
-<%}%>
-<%if(infoErrorsObj!=""){%>
-    <div class="alert1">
-        <p><%= infoErrorsObj%></p>
-    </div>
-<%}%>
+   
    <div class="login-dis">
         <form action="/login" method="POST" >
             <label for="username">Username</label>

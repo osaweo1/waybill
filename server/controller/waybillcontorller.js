@@ -321,22 +321,21 @@ exports.logout=(req,res)=>{
 }
 
 
-exports.reprint=(req,res)=>{
+exports.reprint= async(req,res)=>{
+    const infoErrorsObj=req.flash('infoErrors')
+    const infoSubmitObj=req.flash('infoSubmit')
     try{
         const {search}=req.body
         // console.log(search)
         if (search!=""){
-            Waybill.find({waybill_id:search},(err,result)=>{
-                if(err){
-                    console.log(err)
-                }else{
-                    if ("result.approved_details.approved" ===true) {
-                        console.log(result)
-                    }
-                }
-                
-                
-            })
+           const detail= await Waybill.aggregate([{$match:{waybill_id:search}},{$unwind:"$approved_details"},{$match:{"approved_details.approved":true}}])
+           if(detail){
+                res.render("printwaybills",{detail:detail})         
+            }
+            else{
+                req.flash("infoErrors","Waybill Not found")
+                res.redirect('/menu')
+           }
         }
         else{
             console.log("Feild Cannot Be Empty")
