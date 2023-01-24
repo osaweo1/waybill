@@ -328,9 +328,11 @@ exports.reprint= async(req,res)=>{
         const {search}=req.body
         // console.log(search)
         if (search!=""){
-           const detail= await Waybill.aggregate([{$match:{waybill_id:search}},{$unwind:"$approved_details"},{$match:{"approved_details.approved":true}}])
+        //    const detail= await Waybill.aggregate([{$match:{waybill_id:search}},{$match:{"approved_details.approved":true}}])
+        const detail=await Waybill.find({waybill_id:search},)
            if(detail){
-                res.render("printwaybills",{detail:detail})         
+                res.render("printwaybills",{detail:detail})     
+                console.log(detail)    
             }
             else{
                 req.flash("infoErrors","Waybill Not found")

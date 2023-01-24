@@ -14,7 +14,7 @@
             </div>  
             <div class="div2">
                 <h3>WayBill Number: <span><%=detail.waybill_id %></span></h3>
-                <h3>Date:<span><%=detail.date_Created.toLocaleDateString('el-GR') %></span></h3>
+                <h3>Date:<span><%=(new Date(detail.date_Created)).toLocaleDateString('el-GR') %></span></h3>
             </div>
             </div>
             <div class="driverdetail">
@@ -39,6 +39,7 @@
                         <th>Unit</th>
                     </tr>
                     <% if(detail.items!=""){%>
+                        
                     <% detail.items.forEach((item)=>{%>
                         <tr>
                             <td>
@@ -82,7 +83,7 @@
                             </td>
                            
                         </tr>
-                    <%})%>
+                    <%})%>;
                     <%}%>
                     
                     
