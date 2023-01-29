@@ -983,7 +983,7 @@ margin-bottom: 20px;
 and (max-width:480px){
     .header {
         
-        height: 15vh;
+        height: 12vh;
         border-bottom: 1px solid;
         box-shadow: 3px -3px 3px -2px rgba(0, 0, 0, 0.9);
         display: flex;
@@ -1014,7 +1014,7 @@ and (max-width:480px){
     }
     .content {
         /* background: linear-gradient(to right,rgba(240, 212, 212, 1),rgba(82, 43, 43, 2),rgba(240, 212, 212, 1)); */
-        height:60;
+        height:55;
         object-fit: cover;
 
     }
@@ -1031,7 +1031,7 @@ and (max-width:480px){
         font-size:.5em;
     }
     .footer {
-       
+       height:10px;
        font-size: .8em;
     }
     .content .login-dis {
