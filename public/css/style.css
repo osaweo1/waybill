@@ -1079,7 +1079,7 @@ and (max-width:480px){
     }
     .header .nav ul {
         width:100%;
-        align-items:start;
+        align-items:center;
         justify-content:start;
     }
     .header .nav ul :nth-child(3) {
@@ -1107,6 +1107,7 @@ and (max-width:480px){
     }
     .to_approve {
         height: 80vh; 
+        padding: 15px 0 15px 
     }
     .to_approve h1 {
         
