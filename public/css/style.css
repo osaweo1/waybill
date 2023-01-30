@@ -1202,4 +1202,65 @@ and (max-width:480px){
         font-size:.7em;
       
     }
+    .waybilldetails .detailbody .div1 h3{
+        font-size:.8em;
+      
+    }
+    .waybilldetails .detailbody .div1 h3 span{
+        font-size:.7em;
+        font-weight:300;
+        color:#000;
+      
+    }
+    .waybilldetails .approve-section {
+        margin-top: 10px;
+        
+        padding: 0px;
+       
+       
+        width: 100%;
+        margin-left: 0px;
+    }
+    .waybilldetails .approve-section form {
+        width: 90%;
+        gap: 5px;
+        position:relative
+    }
+    .waybilldetails .approve-section form label {
+    font-weight: bold;
+    font-size: .8em;
+    }
+    .waybilldetails .approve-section form textarea {
+        max-height: 50px;
+        min-height: 50px;
+        max-width: 100%;
+        min-width: 100%;
+        padding: 10px;
+        font-size: .7em;
+    }
+    .waybilldetails .approve-section form .approveddiv {
+        
+        align-items: center;
+        padding: 5px;
+        justify-content: center;
+        gap: 5px;
+        margin-bottom:10px;
+    }
+    .waybilldetails .approve-section form button[type="submit"] {
+        border: none;
+        padding: 10px;
+        background-color: rgb(95, 97, 102);
+        color: #fff;
+        font-size: .7em;
+        width: 50%;
+    }
+    .waybilldetails .approve-section form .approveddiv a {
+      
+        color: #fff;
+        font-size: .7em;
+        cursor: pointer;
+        /* pointer-events: none; */
+        width: 50%;
+        
+    }
 }
