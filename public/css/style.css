@@ -983,19 +983,22 @@ margin-bottom: 20px;
 and (max-width:480px){
     .header {
         
-        height: 10vh;
+        height: 15vh;
         border-bottom: 1px solid;
         box-shadow: 3px -3px 3px -2px rgba(0, 0, 0, 0.9);
         display: flex;
-        /* justify-content: space-between; */
-        align-items: center;
+        justify-content:start;
+        align-items: start;
         box-sizing: border-box;
+        flex-direction:column;
+        position:relative;
     }
     .header .logo {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
+        margin-top:0;
     }
     
     .des-sec {
@@ -1074,6 +1077,51 @@ and (max-width:480px){
         font-size:.8em;
        
     }
-
+    .header .nav ul {
+        width:100%;
+        align-items:start;
+        justify-content:start;
+    }
+    .header .nav ul :nth-child(3) {
+        display:none;
+    }
+    .header .nav ul :nth-child(4)>p {
+        width:auto;
+    }
+    .header .nav ul li {
+        
+        margin-right:2px;
+       
+    }
+    .header .nav ul li a{
+        
+        font-size:.8em;
+       
+    }
+    .header .nav ul li p {
+        
+        font-size: .5em;
+        font-weight: 300;
+        width:50px;
+       
+    }
+    .to_approve {
+        height: 80vh; 
+    }
+    .to_approve h1 {
+        
+        font-weight: 400;
+        font-size:1em;
+    }
+    .to_approve .cancelapprove a {
+        padding: 10px;
+       
+        width: 20%;
+       
+    }
+    .to_approve .approvewaybill {
+       
+        width: 100%;
+    }
 
 }
