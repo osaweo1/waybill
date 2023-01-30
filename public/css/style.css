@@ -1263,4 +1263,21 @@ and (max-width:480px){
         width: 50%;
         
     }
+    .waybilldetails .detailbody .items-detail table {
+        /* margin: auto auto; */
+        padding: 10px;
+    }
+    .waybilldetails .detailbody .items-detail table tr th {
+        padding-right: 0px;
+        font-size: .7em;
+    }
+    .waybilldetails .detailbody .items-detail table tr td {
+        text-align: start;
+        padding: 0px;
+        margin-right: 0px;
+        
+    }
+    .waybilldetails .detailbody .items-detail table tr td li {
+        font-size:.6em;
+    }
 }
