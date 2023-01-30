@@ -1122,5 +1122,20 @@ and (max-width:480px){
     .to_approve .approvewaybill {
         width: 100%;
     }
+    .to_approve .approvewaybill h3{
+        font-size:.8em
+    }
+    .to_approve .approvewaybill table th {
+        font-size: .7em;
+    }
+    .to_approve .approvewaybill table td a{
+      
+      font-size:.8em;
+    }
+    .to_approve .approvewaybill table td{
+      
+        font-size:.8em;
+      }
+  
 
 }
