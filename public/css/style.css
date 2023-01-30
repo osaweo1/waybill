@@ -1133,9 +1133,73 @@ and (max-width:480px){
       font-size:.8em;
     }
     .to_approve .approvewaybill table td{
-      
         font-size:.8em;
-      }
-  
-
+    }
+    .waybilldetails h1 {
+        font-size:.8em;
+        margin-top:0px;
+    }
+    .waybilldetails .detailbody {
+      
+        width: 100%;
+      
+        padding: 5px;
+    }
+    .waybilldetails {
+        padding: 10px; 
+    }
+    .waybilldetails .logo p {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size:.8em;
+    }
+    .waybilldetails .detailbody .des {
+        padding: 0px;
+        flex-basis:1 1 0;
+       
+    }
+    .waybilldetails .des .div1  {
+       width: 70%;
+    }
+    .waybilldetails .des .div1 h3 {
+        font-size:.8em;
+    }
+    .waybilldetails .detailbody .des .div1 span {
+        font-weight:200;
+        font-size: .7em;
+        margin-left: 10px;
+        
+    }
+    .waybilldetails .des .div2 h3 {
+        font-size:.8em;
+    }
+    .waybilldetails .detailbody .des .div2 span {
+        font-size: .7em;
+        margin-left: 2px;
+        font-weight:200;
+        
+    }
+    .waybilldetails .detailbody .driverdetail {
+        padding: 0px;
+    }
+    .waybilldetails .detailbody .driverdetail h3 {
+        font-size: .8em;
+    }
+    .waybilldetails .detailbody .driverdetail h3 span{
+        font-size: .7em;
+        margin-left: 2px;
+        font-weight:200;
+    }
+    .waybilldetails .detailbody .note {
+        padding: 0px;
+      
+    }
+    .waybilldetails .detailbody .note h3{
+        font-size:.8em;
+      
+    }
+    .waybilldetails .detailbody .note p{
+        font-size:.7em;
+      
+    }
 }
