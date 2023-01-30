@@ -1259,7 +1259,7 @@ and (max-width:480px){
         color: #fff;
         font-size: .7em;
         cursor: pointer;
-        /* pointer-events: none; */
+       
         width: 50%;
         
     }
