@@ -1115,12 +1115,10 @@ and (max-width:480px){
     }
     .to_approve .cancelapprove a {
         padding: 10px;
-       
         width: 20%;
        
     }
     .to_approve .approvewaybill {
-       
         width: 100%;
     }
 
