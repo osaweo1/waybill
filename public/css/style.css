@@ -1280,4 +1280,73 @@ and (max-width:480px){
     .waybilldetails .detailbody .items-detail table tr td li {
         font-size:.6em;
     }
+    .approverDetails {
+        
+        padding-left: 0px;
+        padding-right: 0px;
+        height:auto;
+        padding-top:5px;
+        padding-left:5px;
+       
+    }
+    .approverDetails h3 {
+        text-align: left;
+        font-size: .8em;
+    }
+    .approverDetails h3 span {
+        text-align: left;
+        font-size: .7em;
+    }
+    .auth {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        /* flex-basis:1 1; */
+        flex-direction:column;
+        width:100%;
+    }
+    .approverDetails .auth div{
+       margin-left:5px;
+    }
+    .approverDetails .auth p {
+        font-size: .8em;
+        margin-bottom: 0;
+        text-align: left;
+        font-weight: 400;
+        margin-left:0px;
+    }
+    .approverDetails .auth p span{
+        font-size: .7em;
+       
+        text-align: left;
+        
+    }
+    .approverDetails .auto {
+        text-align: center;
+        font-size: .8em;
+    }
+    .button-section {
+       
+        gap: 10px;
+    }
+    .button-section a {
+        text-decoration: none;
+        padding: 10px 20px;
+        background-color: rgb(104, 19, 19);
+        color: #fff;
+        font-size: .7em;
+        
+    }
+    .button-section button {
+        
+        padding: 10px 20px;
+       
+        
+        font-size: .7em;
+        
+    }
+    .waybilldetails .detailbody {
+        
+        margin-bottom: 5px;
+    }
 }
