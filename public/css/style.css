@@ -1487,7 +1487,7 @@ and (max-width:480px){
     }
     .menu-body .menu-display .generate-waybill form .input-content table {
         padding: 5px;
-        border-collapse: none;
+        border-collapse: collapse;
         text-align: center;
         margin-left: auto;
     }
@@ -1534,6 +1534,15 @@ and (max-width:480px){
         /* border: 1px solid; */
         width: 30px;
     }
+    .menu-body .menu-display .generate-waybill form .input-content .deleted {
+        padding: 5px;
+       
+        width: 20px;
+        height: 20px;
+        border: none;
+        margin-left: -15px;
+        margin-top: 8px;
+    }
     .menu-body .menu-display .generate-waybill form .submitapprove button {
         width: 100%;
         padding: 10px;
@@ -1545,6 +1554,83 @@ and (max-width:480px){
         width: 100%;
         margin-left: 0;
         gap: 10px;
+       
+    }
+    .menu-body .menu-display .reprint-waybill .re_print form {
+       
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .menu-body .menu-display .reprint-waybill .re_print .search {
+       
+        height: 60%;
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: -50px;
+        border: none;
+    }
+    .menu-body .menu-display .reprint-waybill .re_print {
+       
+        height: 100%;
+    }
+    .menu-body .menu-display .reprint-waybill .re_print .search form p {
+        font-size: .9rem;
+        margin-top: 10px;
+        
+    }
+    .menu-body .menu-display .reprint-waybill .re_print .search form input[type="text"] {
+        padding: 10px;
+        width: 100%;
+        font-size: .7rem;
+        height:30px;
+    }
+    .menu-body .menu-display .reprint-waybill .re_print .search form button {
+        /* font-size: 1.5rem; */
+        /* text-align: center; */
+        padding: 10px;
+        width: 100%;
+        height: 30%;
+        font-size: .6rem;
+       
+       
+    }
+    .menu-body .menu-display .reprint-waybill .re_print .search button {
+        padding: 10px;
+        height: 50%;
+        font-size: .6rem;
+        margin-top: 40px;
+        
+    }
+    .menu-body .menu-display .view-waybill h1 {
+        
+        font-size: .8em;
+    }
+    .menu-body .menu-display .view-waybill .approvewaybill {
+        font-size: .7em;
+    }
+    .menu-body .menu-display .view-waybill .approvewaybill h3 {
+        
+        font-size: .8rem;
+        
+    }
+    .menu-body .menu-display .view-waybill  .cancelapprove {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;
+        
+    }
+    .menu-body .menu-display .view-waybill .cancelapprove button {
+        width: 100%;
+        padding: 10px;
+        font-weight: 400;
+        font-size: .6em;
+      
+        
        
     }
 }
