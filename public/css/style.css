@@ -1521,11 +1521,12 @@ and (max-width:480px){
     .menu-body .menu-display .generate-waybill form .input-content table th{
         font-size: .5rem;
         text-align: center;
+        padding: 0;
     }
     .menu-body .menu-display .generate-waybill form .input-content table td input{
         /* font-size: .5rem; */
         /* text-align: center; */
-        margin-left: 20px;
+        /* margin-left: 20px; */
     }
     .menu-body .menu-display .generate-waybill form .add {
         /* padding: 10px; */
@@ -1542,7 +1543,7 @@ and (max-width:480px){
     .menu-body .menu-display .generate-waybill form .submitapprove {
         /* border: 1px solid; */
         width: 100%;
-       margin-left: 0;
+        margin-left: 0;
         gap: 10px;
        
     }
