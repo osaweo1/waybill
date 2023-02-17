@@ -1494,7 +1494,7 @@ and (max-width:480px){
     .menu-body .menu-display .generate-waybill form .input-content  input[type='number'] {
         padding: 5px;
         width: 40px;
-        /* margin-right: 10px; */
+        margin-right: 10px;
         height: 30px;
     }
     .menu-body .menu-display .generate-waybill form .input-content  input[type='text'] {
