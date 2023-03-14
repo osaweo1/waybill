@@ -100,6 +100,39 @@ const userApprove=(req,res,next)=>{
             }
             else{
                 // console.log(decodedtoken)
+                res.cookie('token','',{
+                    maxAge:1,
+                })
+                res.redirect('/')
+            }
+        })
+    }
+    else{
+        res.cookie('token','',{
+            maxAge:1,
+        })
+        res.redirect('/')
+    }
+}
+const userAuditor=(req,res,next)=>{
+    const token=req.cookies.token
+    if(token){
+
+        jwt.verify(token,process.env.JWT_SECRET,async (err,decodedtoken)=>{
+            if(decodedtoken){
+                let user= await User.findById(decodedtoken._id)
+                if(user.role==="Auditor"){
+                    next()
+                }
+                else{
+                    res.cookie('token','',{
+                        maxAge:1,
+                    })
+                    res.redirect('/')
+                }
+            }
+            else{
+                // console.log(decodedtoken)
                 res.redirect('/')
             }
         })
@@ -109,7 +142,59 @@ const userApprove=(req,res,next)=>{
     }
 }
 
+const userreload=(req,res,next)=>{
+    const token=req.cookies.token
+    if(token){
 
-module.exports={requireAuth,checkUser,userArea,userApprove}
+        jwt.verify(token,process.env.JWT_SECRET,async (err,decodedtoken)=>{
+            if(decodedtoken){
+                let user= await User.findById(decodedtoken._id)
+                if(user.role==="Approver"){
+                    res.redirect('/approve')
+                    next()
+                }
+                else if(user.role==="User"){
+                    res.redirect('/menu')
+                    next()
+                }
+                else if(user.role==="Admin"){
+                    res.redirect('/admin')
+                    next()
+                }
+                else if(user.role==="Auditor"){
+                    res.redirect('/audit')
+                    next()
+                }
+                else{
+                    res.cookie('token','',{
+                        maxAge:1,
+                    })
+                    res.redirect('/')
+                }
+            }
+            else{
+                // console.log(decodedtoken)
+                res.redirect('/')
+            }
+        })
+    }
+    else{
+        res.redirect('/')
+    }
+}
+
+const deleteToken=(req,res,next)=>{
+    const token=req.cookies.token
+    if(token){
+        res.cookie('token','',{
+            maxAge:1,
+        })
+    }
+    next()
+}
+
+
+
+module.exports={requireAuth,checkUser,userArea,userApprove,userreload,userAuditor,deleteToken}
 
 

@@ -819,7 +819,18 @@ margin-bottom: 20px;
     text-align: center;
 }
 
-
+/* audit */
+.auditapproved{
+    width:100%;
+    margin: 2% 40%;
+}
+.auditapproved .view-waybills{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
 .to_approve{
     
@@ -844,6 +855,7 @@ margin-bottom: 20px;
     border: 1px solid;
     width:800px;
 }
+
 .to_approve .approvewaybill table{
     width: 100%;
     /* border: 1px solid; */

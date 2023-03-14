@@ -290,20 +290,55 @@ exports.loginSub=async(req,res)=>{
                     }
                     else if(user.role==="Approver"){
                         res.redirect("/approve")
-                    }else{
-                        res.redirect("/Admin")
+                    }
+                    else if(user.role==="Auditor"){
+                            res.redirect("/audit")
+                    }
+                    else if(user.role==="Admin"){
+                        res.redirect("/administration")
+                }
+                    else{
+                    const token=req.cookies.token
+                    if(token){
+                        res.cookie('token','',{
+                            maxAge:1,
+                        })
+                    }
+                    req.flash("infoErrors","Invalid Login Credencials")
+                    res.redirect("/")
+                        res.redirect("/")
                     }
                 }else{
+                    const token=req.cookies.token
+                    if(token){
+                        res.cookie('token','',{
+                            maxAge:1,
+                        })
+                    }
                     req.flash("infoErrors","Invalid Login Credencials")
                     res.redirect("/")
                 }
             }else{
+                
+                const token=req.cookies.token
+                if(token){
+                    res.cookie('token','',{
+                        maxAge:1,
+                    })
+                }
                 req.flash("infoErrors","Invalid Login Credencials")
-                res.redirect('/')
+                res.redirect("/")
             }
         }else{
+            const token=req.cookies.token
+            if(token){
+                res.cookie('token','',{
+                    maxAge:1,
+                })
+            }
             req.flash("infoErrors","Invalid Login Credencials")
-            res.redirect('/')
+            res.redirect("/")
+            
         }
     } 
     
@@ -350,3 +385,48 @@ exports.reprint= async(req,res)=>{
         console.log(error)
     }
 }
+
+// auditor area
+exports.approvedWaybill=async(req, res)=>{
+    const infoErrorsObj=req.flash('infoErrors')
+    const infoSubmitObj=req.flash('infoSubmit')
+    try{
+        const results=await Waybill.aggregate([{$unwind:"$approved_details"},{$match:{"approved_details.approved":true
+    }},{$sort:{"approved_details.approved_date":-1}}])
+    let counts=await Waybill.aggregate([{$unwind:"$approved_details"},
+    {$match:{"approved_details.approved":true}},
+    {$group:{_id:null,count:{$sum:1}}}])
+
+        // console.log(results)
+        // console.log(counts)
+
+        content={
+            title:"waybill menu",
+            results:results,
+            counts:counts,
+            infoErrorsObj:infoErrorsObj,
+            infoSubmitObj:infoSubmitObj
+        }
+        res.render('audit',content)
+        
+    }
+    catch(error){
+        console.log(error)
+    }
+    
+}
+exports.wayBillDetailed= async (req,res)=>{
+    try{
+        let details=await Waybill.findById({_id:req.params.id})
+        const content={
+            title:'Waybill Details',
+            detail:details
+        }
+        res.render('auditprint', content)
+    }
+    catch(error){
+        console.log(error)
+    }
+
+}
+

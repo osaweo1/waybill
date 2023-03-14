@@ -4,11 +4,11 @@ const router=express.Router()
 
 const waybillcontorller= require('../controller/waybillcontorller')
 
-const {requireAuth,checkUser,userArea,userApprove}=require('../middleware/authmiddleware')
+const {requireAuth,checkUser,userArea,userApprove,userreload, userAuditor,deleteToken}=require('../middleware/authmiddleware')
 
 // router.get('*',checkUser)
 
-router.get('/',checkUser,waybillcontorller.homepage)
+router.get('/',deleteToken,checkUser,waybillcontorller.homepage)
 
 router.get('/menu',requireAuth,userArea,checkUser,waybillcontorller.menu)
 
@@ -35,6 +35,10 @@ router.post('/login',waybillcontorller.loginSub)
 router.get('/logout',waybillcontorller.logout)
 
 router.post('/reprint',waybillcontorller.reprint)
+
+router.get('/audit',requireAuth,userAuditor,checkUser,waybillcontorller.approvedWaybill)
+
+router.get('/waybillDetailed/:id',requireAuth,checkUser,waybillcontorller.wayBillDetailed)
 
 
 module.exports=router

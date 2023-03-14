@@ -1,0 +1,35 @@
+<section class="auditapproved">
+
+    <div class="view-waybills">
+        <h1>Approved Waybill</h1>
+        <div class="approvewaybill">
+            <table>
+                <tr>
+                 <th>WayBill Number</th>
+                 
+                 <th>Date Of Generation</th>
+                </tr>
+                <%if(results!=""){%>
+                    <% results.forEach((result)=>{%>
+                        <tr>
+                            <td><a href="/wayBillDetailed/<%=result._id%>"><%=result.waybill_id%></a></td> 
+                            
+
+                           <td><%=result.date_Created.toLocaleDateString('el-GR')%></td> 
+                        </tr>
+                   <%})%>
+                
+                
+                <%}%>              
+                
+                
+                 
+             </table>
+             <%counts.forEach((count)=>{%>
+                <h3>Number of Approved Waybills:<%=count.count%></h3>
+            <%})%>
+        </div>
+      
+
+
+</section>
